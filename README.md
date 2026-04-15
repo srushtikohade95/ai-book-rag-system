@@ -134,7 +134,7 @@ Screenshots showing working APIs and outputs are attached for reference.
 ## Note
 
 * The backend is fully functional and tested.
-* Frontend part is not completed due to time constraints.
+* Frontend is kept minimal considering system resource constraints, while focusing on backend and AI functionality.
 * Focus has been on backend logic, APIs, and AI-based querying.
 
 ---
