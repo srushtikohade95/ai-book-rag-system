@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Book Assistant</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        input {
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #ff7eb3;
+            color: white;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 30px;
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>📚 AI Book Assistant</h1>
+
+<input type="text" id="query" placeholder="Ask about books...">
+<button onclick="ask()">Ask</button>
+
+<div id="result"></div>
+
+<script>
+function ask() {
+    let q = document.getElementById("query").value;
+
+    fetch(`/api/ask/?q=${q}`)
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("result").innerText = data.response;
+    });
+}
+</script>
+
+</body>
+</html>
